@@ -22,10 +22,7 @@ function bulkNyehuing(amount, length) {
   let name = '';
 
   for (let i = 1; i <= amount; i++) {
-    for (let j = 0; j < length; j++) {
-      name += names[Math.floor(Math.random()*2350)]
-    }
-    name += ' ';
+    name += nyehuing(length) + ' ';
 
     if (i % 10 == 0) {
       name += '\n';
