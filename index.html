@@ -4,7 +4,7 @@
 
 <h2>★랜덤 녜힁 제조기★</h2>
 
-<p id="demo">여기에 녜힁 출력</p>
+<pre id="demo" style="font-size: 16px;">여기에 녜힁 출력</pre>
 
 <script>
   
@@ -17,13 +17,28 @@ function nyehuing(length) {
   }
   return name;
 }
+
+function bulkNyehuing(amount, length) {
+  let name = '';
+
+  for (let i = 1; i <= amount; i++) {
+    name += nyehuing(length) + ' ';
+
+    if (i % 10 == 0) {
+      name += '\n';
+    }
+  }
+  return name;
+}
 </script>
 
-<button type="button" onclick='document.getElementById("demo").innerHTML = nyehuing(2)'>Click Me!</button>
-  
-<button type="button" onclick='document.getElementById("demo").innerHTML = nyehuing(3)'>세글자</button>  
+<input type="number" id="amount" placeholder="제조개수">
 
-<button type="button" onclick='document.getElementById("demo").innerHTML = nyehuing(6)'>더욱 긴 녜힁</button>
+<button type="button" onclick='document.getElementById("demo").innerHTML = bulkNyehuing(document.getElementById("amount").value, 2)'>Click Me!</button>
+  
+<button type="button" onclick='document.getElementById("demo").innerHTML = bulkNyehuing(document.getElementById("amount").value, 3)'>세글자</button>  
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = bulkNyehuing(document.getElementById("amount").value, 6)'>더욱 긴 녜힁</button>
   
 </body>
 </html>
